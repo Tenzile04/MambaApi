@@ -1,0 +1,19 @@
+{
+  "Version": 1,
+  "Hash": "mV68Hw4iknTX4k0IOMhaF9y7ATFMxdYSw37jyHz0TP0=",
+  "Source": "MambaManyToManyCrud",
+  "BasePath": "_content/MambaManyToManyCrud",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "MambaManyToManyCrud\\wwwroot",
+      "Source": "MambaManyToManyCrud",
+      "ContentRoot": "C:\\Users\\II novbe\\Desktop\\rand\\Visual studio\\MambaManyToManyCrud\\MambaManyToManyCrud\\wwwroot\\",
+      "BasePath": "_content/MambaManyToManyCrud",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": []
+}
