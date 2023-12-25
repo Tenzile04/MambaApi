@@ -12,7 +12,7 @@ builder.Services.AddControllers().AddFluentValidation(opt =>
 });
 builder.Services.AddDbContext<AppDbContext>(opt =>
 {
-    opt.UseSqlServer(builder.Configuration.GetConnectionString("default"));
+    opt.UseSqlServer(builder.Configuration.GetConnectionString("default2"));
 });
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -27,7 +27,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+app.UseStaticFiles();
 app.UseHttpsRedirection();
 
 app.UseAuthorization();

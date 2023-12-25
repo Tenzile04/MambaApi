@@ -43,6 +43,8 @@ namespace MambaManyToManyCrud.Controllers
             return StatusCode(201, new { message = "Created Profession" });
         }
         [HttpGet("{id}")]
+       
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public IActionResult Get(int id)
         {
             var profession=_context.Professions.FirstOrDefault(x => x.Id == id);
@@ -52,6 +54,8 @@ namespace MambaManyToManyCrud.Controllers
             return Ok(profession);
         }
         [HttpPut("{id}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public IActionResult Update(int id,ProfesionUpdateDto dto)
         {
             var profession = _context.Professions.FirstOrDefault(x => x.Id == id);
@@ -64,16 +68,20 @@ namespace MambaManyToManyCrud.Controllers
 
         }
         [HttpDelete("{id}")]
-        
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public IActionResult Delete(int id)
         {
             var profession = _context.Professions.FirstOrDefault(x => x.Id == id);
             if (profession == null) return NotFound();
-            //profession.IsDeleted=!profession.IsDeleted;
-            _context.Professions.Remove(profession);
+            profession.IsDeleted = !profession.IsDeleted;
+            //_context.Professions.Remove(profession);
+            profession.UpdatedDate = DateTime.UtcNow.AddHours(4);
             _context.SaveChanges();
-            return NoContent();
+            return StatusCode(204);
 
-        }
+        }      
+          
+        
     }
 }

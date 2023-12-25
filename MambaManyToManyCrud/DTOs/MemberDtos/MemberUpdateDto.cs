@@ -13,8 +13,11 @@ namespace MambaManyToManyCrud.DTOs.MemberDtos
     {
         public MemberUpdateDtoValidator()
         {
-            RuleFor(x => x.FullName).NotEmpty().NotNull().MaximumLength(100).MinimumLength(3);
-            RuleFor(x => x.LinkUrl).NotEmpty().NotNull().MaximumLength(100).MinimumLength(3);
+          RuleFor(x => x.FullName).NotEmpty().WithMessage("Bos ola bilmez")
+           .NotNull().WithMessage("Null ola bilmez")
+           .MaximumLength(100).WithMessage("Max 100 ola biler")
+           .MinimumLength(3).WithMessage("Min 3 ola biler");
+          RuleFor(x => x.LinkUrl).NotNull().WithMessage("Null ola bilmez");
 
         }
     }

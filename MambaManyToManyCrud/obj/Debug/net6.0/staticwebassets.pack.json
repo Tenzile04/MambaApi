@@ -1,0 +1,49 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Tenzıle SSD\\Desktop\\MambaApi\\MambaManyToManyCrud\\wwwroot\\uploads\\members\\0d8b9f11-a12f-4b33-a9a6-64d53b402310team-3.jpg",
+      "PackagePath": "staticwebassets\\uploads\\members\\0d8b9f11-a12f-4b33-a9a6-64d53b402310team-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tenzıle SSD\\Desktop\\MambaApi\\MambaManyToManyCrud\\wwwroot\\uploads\\members\\305a2993-77ba-47bc-9097-a1f5fb079649team-2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\members\\305a2993-77ba-47bc-9097-a1f5fb079649team-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tenzıle SSD\\Desktop\\MambaApi\\MambaManyToManyCrud\\wwwroot\\uploads\\members\\42730342-d927-424c-b61b-5956efaab6b7banner-9.jpg",
+      "PackagePath": "staticwebassets\\uploads\\members\\42730342-d927-424c-b61b-5956efaab6b7banner-9.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tenzıle SSD\\Desktop\\MambaApi\\MambaManyToManyCrud\\wwwroot\\uploads\\members\\6097e0d1-574b-4cf9-a01b-0dbb47befdacteam-3.jpg",
+      "PackagePath": "staticwebassets\\uploads\\members\\6097e0d1-574b-4cf9-a01b-0dbb47befdacteam-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tenzıle SSD\\Desktop\\MambaApi\\MambaManyToManyCrud\\wwwroot\\uploads\\members\\84bc323d-6ca8-48ae-92a2-2eba75ce9484team-3.jpg",
+      "PackagePath": "staticwebassets\\uploads\\members\\84bc323d-6ca8-48ae-92a2-2eba75ce9484team-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tenzıle SSD\\Desktop\\MambaApi\\MambaManyToManyCrud\\wwwroot\\uploads\\members\\ae76963e-d016-4c12-a420-e59a56756599team-2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\members\\ae76963e-d016-4c12-a420-e59a56756599team-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tenzıle SSD\\Desktop\\MambaApi\\MambaManyToManyCrud\\wwwroot\\uploads\\members\\be4a0c26-9099-4975-8478-173a086164fabanner-3.jpg",
+      "PackagePath": "staticwebassets\\uploads\\members\\be4a0c26-9099-4975-8478-173a086164fabanner-3.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.MambaManyToManyCrud.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.MambaManyToManyCrud.props",
+      "PackagePath": "build\\MambaManyToManyCrud.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.MambaManyToManyCrud.props",
+      "PackagePath": "buildMultiTargeting\\MambaManyToManyCrud.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.MambaManyToManyCrud.props",
+      "PackagePath": "buildTransitive\\MambaManyToManyCrud.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

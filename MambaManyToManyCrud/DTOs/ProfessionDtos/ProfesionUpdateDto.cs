@@ -10,7 +10,11 @@ namespace MambaManyToManyCrud.DTOs.ProfessionDtos
     {
         public ProfessionUpdateDtoValidator()
         {
-            RuleFor(x => x.Name).NotEmpty().NotNull().MaximumLength(50).MinimumLength(3);
+            RuleFor(x => x.Name).NotEmpty().WithMessage("Bos ola bilmez")
+         .NotNull().WithMessage("Null ola bilmez")
+         .MaximumLength(50).WithMessage("Max 50 ola biler")
+         .MinimumLength(3).WithMessage("Min 3 ola biler");
+      
 
         }
     }

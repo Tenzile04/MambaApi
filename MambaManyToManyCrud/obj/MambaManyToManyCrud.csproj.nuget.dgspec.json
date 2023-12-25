@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\II novbe\\Desktop\\rand\\Visual studio\\MambaManyToManyCrud\\MambaManyToManyCrud\\MambaManyToManyCrud.csproj": {}
+    "C:\\Users\\Tenzıle SSD\\Desktop\\MambaApi\\MambaManyToManyCrud\\MambaManyToManyCrud.csproj": {}
   },
   "projects": {
-    "C:\\Users\\II novbe\\Desktop\\rand\\Visual studio\\MambaManyToManyCrud\\MambaManyToManyCrud\\MambaManyToManyCrud.csproj": {
+    "C:\\Users\\Tenzıle SSD\\Desktop\\MambaApi\\MambaManyToManyCrud\\MambaManyToManyCrud.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\II novbe\\Desktop\\rand\\Visual studio\\MambaManyToManyCrud\\MambaManyToManyCrud\\MambaManyToManyCrud.csproj",
+        "projectUniqueName": "C:\\Users\\Tenzıle SSD\\Desktop\\MambaApi\\MambaManyToManyCrud\\MambaManyToManyCrud.csproj",
         "projectName": "MambaManyToManyCrud",
-        "projectPath": "C:\\Users\\II novbe\\Desktop\\rand\\Visual studio\\MambaManyToManyCrud\\MambaManyToManyCrud\\MambaManyToManyCrud.csproj",
-        "packagesPath": "C:\\Users\\II novbe\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\II novbe\\Desktop\\rand\\Visual studio\\MambaManyToManyCrud\\MambaManyToManyCrud\\obj\\",
+        "projectPath": "C:\\Users\\Tenzıle SSD\\Desktop\\MambaApi\\MambaManyToManyCrud\\MambaManyToManyCrud.csproj",
+        "packagesPath": "C:\\Users\\Tenzıle SSD\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Tenzıle SSD\\Desktop\\MambaApi\\MambaManyToManyCrud\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\II novbe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Tenzıle SSD\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
