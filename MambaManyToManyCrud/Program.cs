@@ -12,7 +12,7 @@ builder.Services.AddControllers().AddFluentValidation(opt =>
 });
 builder.Services.AddDbContext<AppDbContext>(opt =>
 {
-    opt.UseSqlServer(builder.Configuration.GetConnectionString("default2"));
+    opt.UseSqlServer(builder.Configuration.GetConnectionString("default"));
 });
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

@@ -21,5 +21,25 @@ namespace MambaManyToManyCrud.DAL
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(MemberConfiguration).Assembly);
             base.OnModelCreating(modelBuilder);
         }
+        public override int SaveChanges()
+        {
+            var datas=ChangeTracker.Entries<BaseEntity>();
+            foreach (var item in datas)
+            {
+                var entity=item.Entity;
+                switch (item.State)
+                {
+                    case EntityState.Modified:
+                        entity.UpdatedDate = DateTime.UtcNow.AddHours(4);
+                        break;
+                    case EntityState.Added:
+                        entity.UpdatedDate= DateTime.UtcNow.AddHours(4);
+                        break;
+                    default:
+                        break;
+                }
+            }
+            return base.SaveChanges();
+        }
     }
 }

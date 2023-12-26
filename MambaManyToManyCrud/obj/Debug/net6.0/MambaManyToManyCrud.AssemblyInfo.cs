@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MambaManyToManyCrud")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6b9adc5ba56181bef88464937faef3a0d95ffb45")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8755edc6542bc0027a0865f8bd84158e1506d056")]
 [assembly: System.Reflection.AssemblyProductAttribute("MambaManyToManyCrud")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MambaManyToManyCrud")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

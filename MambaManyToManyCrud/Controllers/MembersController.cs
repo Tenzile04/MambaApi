@@ -25,14 +25,37 @@ namespace MambaManyToManyCrud.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetAll()
+        public IActionResult GetAll(string? search,int? professionId,int? order )
         {
-            var member = _context.Members.ToList();
+          var  member=_context.Members.AsQueryable();
+            //var member = _context.Members.ToList();
+            if (search != null)
+            {
+                member = member.Where(m => m.FullName.Contains(search.Trim().ToLower()));
+                
+            }
+            if(professionId != null)
+            {
+                member = member.Where(x => x.MemberProfessions.Any(x => x.ProfessionId == professionId && x.MemberId==x.Id));
+            }
+            if(order != null)
+            {
+                switch (order)
+                {
+                    case 1:
+                        member=member.OrderByDescending(x=>x.CreatedDate); break;
+                    case 2:
+                        member = member.OrderBy(x => x.FullName);break;
+                    default:
+                        return BadRequest("Order value is not correct!");
+                };
+            }
+
             IEnumerable<MemberGetDto> memberGetDtos = new List<MemberGetDto>();
             memberGetDtos = member.Select(x => new MemberGetDto
             {
                 FullName = x.FullName
-
+                
             });
 
             return Ok(memberGetDtos);
