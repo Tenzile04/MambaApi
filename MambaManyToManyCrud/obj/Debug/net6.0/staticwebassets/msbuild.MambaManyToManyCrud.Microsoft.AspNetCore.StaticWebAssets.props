@@ -64,6 +64,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\members\42730342-d927-424c-b61b-5956efaab6b7banner-9.jpg))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\members\50293141-c344-439c-89be-fabe9400ee5cproduct-details-4 - Copy - Copy - Copy.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>MambaManyToManyCrud</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/MambaManyToManyCrud</BasePath>
+      <RelativePath>uploads/members/50293141-c344-439c-89be-fabe9400ee5cproduct-details-4 - Copy - Copy - Copy.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\members\50293141-c344-439c-89be-fabe9400ee5cproduct-details-4 - Copy - Copy - Copy.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\members\6097e0d1-574b-4cf9-a01b-0dbb47befdacteam-3.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>MambaManyToManyCrud</SourceId>
@@ -95,22 +111,6 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\members\84bc323d-6ca8-48ae-92a2-2eba75ce9484team-3.jpg))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\members\9cabcd59-8c49-4370-b99c-cdd5b46fab21banner-9.jpg))">
-      <SourceType>Package</SourceType>
-      <SourceId>MambaManyToManyCrud</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/MambaManyToManyCrud</BasePath>
-      <RelativePath>uploads/members/9cabcd59-8c49-4370-b99c-cdd5b46fab21banner-9.jpg</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\members\9cabcd59-8c49-4370-b99c-cdd5b46fab21banner-9.jpg))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\members\ae76963e-d016-4c12-a420-e59a56756599team-2.jpg))">
       <SourceType>Package</SourceType>

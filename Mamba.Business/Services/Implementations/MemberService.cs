@@ -162,7 +162,7 @@ namespace Mamba.Business.Services.Implementations
 
         public async Task UpdateAsync([FromForm] MemberUpdateDto memberUpdateDto)
         {
-            var member = await _memberRepository.GetByIdAsync(x => x.Id == memberUpdateDto.Id);
+            var member = await _memberRepository.GetByIdAsync(x => x.Id == memberUpdateDto.Id, "MemberProfessions");
             if (member == null) throw new InvalidNotFoundException();
 
             member.MemberProfessions.RemoveAll(x => !memberUpdateDto.ProfessionIds.Contains(x.ProfessionId));
