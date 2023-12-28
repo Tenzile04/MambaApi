@@ -948,6 +948,62 @@
             "rid": "win"
           }
         }
+      },
+      "Mamba.Business/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1",
+          "FluentValidation.AspNetCore": "11.3.0",
+          "Mamba.Data": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "6.0.25",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.25",
+          "Swashbuckle.AspNetCore": "6.5.0"
+        },
+        "compile": {
+          "bin/placeholder/Mamba.Business.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mamba.Business.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "Mamba.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1",
+          "FluentValidation.AspNetCore": "11.3.0",
+          "Microsoft.EntityFrameworkCore": "6.0.25",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.25",
+          "Swashbuckle.AspNetCore": "6.5.0"
+        },
+        "compile": {
+          "bin/placeholder/Mamba.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mamba.Core.dll": {}
+        }
+      },
+      "Mamba.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1",
+          "FluentValidation.AspNetCore": "11.3.0",
+          "Mamba.Core": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "6.0.25",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.25",
+          "Swashbuckle.AspNetCore": "6.5.0"
+        },
+        "compile": {
+          "bin/placeholder/Mamba.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mamba.Data.dll": {}
+        }
       }
     }
   },
@@ -2596,12 +2652,28 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "Mamba.Business/1.0.0": {
+      "type": "project",
+      "path": "../Mamba.Business/Mamba.Business.csproj",
+      "msbuildProject": "../Mamba.Business/Mamba.Business.csproj"
+    },
+    "Mamba.Core/1.0.0": {
+      "type": "project",
+      "path": "../Mamba.Core/Mamba.Core.csproj",
+      "msbuildProject": "../Mamba.Core/Mamba.Core.csproj"
+    },
+    "Mamba.Data/1.0.0": {
+      "type": "project",
+      "path": "../Mamba.Data/Mamba.Data.csproj",
+      "msbuildProject": "../Mamba.Data/Mamba.Data.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 12.0.1",
       "FluentValidation.AspNetCore >= 11.3.0",
+      "Mamba.Business >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 6.0.25",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.25",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.25",
@@ -2609,19 +2681,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\II novbe\\.nuget\\packages\\": {}
+    "C:\\Users\\Tenzıle SSD\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\II novbe\\Desktop\\MambaApi\\MambaManyToManyCrud\\MambaManyToManyCrud.csproj",
+      "projectUniqueName": "C:\\Users\\Tenzıle SSD\\Desktop\\MambaApi\\MambaManyToManyCrud\\MambaManyToManyCrud.csproj",
       "projectName": "MambaManyToManyCrud",
-      "projectPath": "C:\\Users\\II novbe\\Desktop\\MambaApi\\MambaManyToManyCrud\\MambaManyToManyCrud.csproj",
-      "packagesPath": "C:\\Users\\II novbe\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\II novbe\\Desktop\\MambaApi\\MambaManyToManyCrud\\obj\\",
+      "projectPath": "C:\\Users\\Tenzıle SSD\\Desktop\\MambaApi\\MambaManyToManyCrud\\MambaManyToManyCrud.csproj",
+      "packagesPath": "C:\\Users\\Tenzıle SSD\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Tenzıle SSD\\Desktop\\MambaApi\\MambaManyToManyCrud\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\II novbe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Tenzıle SSD\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2629,12 +2706,17 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Tenzıle SSD\\Desktop\\MambaApi\\Mamba.Business\\Mamba.Business.csproj": {
+              "projectPath": "C:\\Users\\Tenzıle SSD\\Desktop\\MambaApi\\Mamba.Business\\Mamba.Business.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

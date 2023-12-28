@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "wf2faThlOP8xGG/SOh25OvgniYjMpcg3bYRIRqJLPBs=",
+  "Hash": "znsEHx5lVnqZAXL2WQVb1He2AZPWuiYwZGibwnDTEfA=",
   "Source": "MambaManyToManyCrud",
   "BasePath": "_content/MambaManyToManyCrud",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "MambaManyToManyCrud\\wwwroot",
       "Source": "MambaManyToManyCrud",
-      "ContentRoot": "C:\\Users\\II novbe\\Desktop\\MambaApi\\MambaManyToManyCrud\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tenzıle SSD\\Desktop\\MambaApi\\MambaManyToManyCrud\\wwwroot\\",
       "BasePath": "_content/MambaManyToManyCrud",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\II novbe\\Desktop\\MambaApi\\MambaManyToManyCrud\\wwwroot\\uploads\\members\\06cd58dd-00c4-4b3a-a724-3986e3572334banner-9.jpg",
+      "Identity": "C:\\Users\\Tenzıle SSD\\Desktop\\MambaApi\\MambaManyToManyCrud\\wwwroot\\uploads\\members\\06cd58dd-00c4-4b3a-a724-3986e3572334banner-9.jpg",
       "SourceId": "MambaManyToManyCrud",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\II novbe\\Desktop\\MambaApi\\MambaManyToManyCrud\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tenzıle SSD\\Desktop\\MambaApi\\MambaManyToManyCrud\\wwwroot\\",
       "BasePath": "_content/MambaManyToManyCrud",
       "RelativePath": "uploads/members/06cd58dd-00c4-4b3a-a724-3986e3572334banner-9.jpg",
       "AssetKind": "All",
@@ -36,10 +36,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\members\\06cd58dd-00c4-4b3a-a724-3986e3572334banner-9.jpg"
     },
     {
-      "Identity": "C:\\Users\\II novbe\\Desktop\\MambaApi\\MambaManyToManyCrud\\wwwroot\\uploads\\members\\0d8b9f11-a12f-4b33-a9a6-64d53b402310team-3.jpg",
+      "Identity": "C:\\Users\\Tenzıle SSD\\Desktop\\MambaApi\\MambaManyToManyCrud\\wwwroot\\uploads\\members\\0d8b9f11-a12f-4b33-a9a6-64d53b402310team-3.jpg",
       "SourceId": "MambaManyToManyCrud",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\II novbe\\Desktop\\MambaApi\\MambaManyToManyCrud\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tenzıle SSD\\Desktop\\MambaApi\\MambaManyToManyCrud\\wwwroot\\",
       "BasePath": "_content/MambaManyToManyCrud",
       "RelativePath": "uploads/members/0d8b9f11-a12f-4b33-a9a6-64d53b402310team-3.jpg",
       "AssetKind": "All",
@@ -55,10 +55,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\members\\0d8b9f11-a12f-4b33-a9a6-64d53b402310team-3.jpg"
     },
     {
-      "Identity": "C:\\Users\\II novbe\\Desktop\\MambaApi\\MambaManyToManyCrud\\wwwroot\\uploads\\members\\305a2993-77ba-47bc-9097-a1f5fb079649team-2.jpg",
+      "Identity": "C:\\Users\\Tenzıle SSD\\Desktop\\MambaApi\\MambaManyToManyCrud\\wwwroot\\uploads\\members\\305a2993-77ba-47bc-9097-a1f5fb079649team-2.jpg",
       "SourceId": "MambaManyToManyCrud",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\II novbe\\Desktop\\MambaApi\\MambaManyToManyCrud\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tenzıle SSD\\Desktop\\MambaApi\\MambaManyToManyCrud\\wwwroot\\",
       "BasePath": "_content/MambaManyToManyCrud",
       "RelativePath": "uploads/members/305a2993-77ba-47bc-9097-a1f5fb079649team-2.jpg",
       "AssetKind": "All",
@@ -74,10 +74,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\members\\305a2993-77ba-47bc-9097-a1f5fb079649team-2.jpg"
     },
     {
-      "Identity": "C:\\Users\\II novbe\\Desktop\\MambaApi\\MambaManyToManyCrud\\wwwroot\\uploads\\members\\42730342-d927-424c-b61b-5956efaab6b7banner-9.jpg",
+      "Identity": "C:\\Users\\Tenzıle SSD\\Desktop\\MambaApi\\MambaManyToManyCrud\\wwwroot\\uploads\\members\\42730342-d927-424c-b61b-5956efaab6b7banner-9.jpg",
       "SourceId": "MambaManyToManyCrud",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\II novbe\\Desktop\\MambaApi\\MambaManyToManyCrud\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tenzıle SSD\\Desktop\\MambaApi\\MambaManyToManyCrud\\wwwroot\\",
       "BasePath": "_content/MambaManyToManyCrud",
       "RelativePath": "uploads/members/42730342-d927-424c-b61b-5956efaab6b7banner-9.jpg",
       "AssetKind": "All",
@@ -93,10 +93,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\members\\42730342-d927-424c-b61b-5956efaab6b7banner-9.jpg"
     },
     {
-      "Identity": "C:\\Users\\II novbe\\Desktop\\MambaApi\\MambaManyToManyCrud\\wwwroot\\uploads\\members\\6097e0d1-574b-4cf9-a01b-0dbb47befdacteam-3.jpg",
+      "Identity": "C:\\Users\\Tenzıle SSD\\Desktop\\MambaApi\\MambaManyToManyCrud\\wwwroot\\uploads\\members\\6097e0d1-574b-4cf9-a01b-0dbb47befdacteam-3.jpg",
       "SourceId": "MambaManyToManyCrud",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\II novbe\\Desktop\\MambaApi\\MambaManyToManyCrud\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tenzıle SSD\\Desktop\\MambaApi\\MambaManyToManyCrud\\wwwroot\\",
       "BasePath": "_content/MambaManyToManyCrud",
       "RelativePath": "uploads/members/6097e0d1-574b-4cf9-a01b-0dbb47befdacteam-3.jpg",
       "AssetKind": "All",
@@ -112,10 +112,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\members\\6097e0d1-574b-4cf9-a01b-0dbb47befdacteam-3.jpg"
     },
     {
-      "Identity": "C:\\Users\\II novbe\\Desktop\\MambaApi\\MambaManyToManyCrud\\wwwroot\\uploads\\members\\84bc323d-6ca8-48ae-92a2-2eba75ce9484team-3.jpg",
+      "Identity": "C:\\Users\\Tenzıle SSD\\Desktop\\MambaApi\\MambaManyToManyCrud\\wwwroot\\uploads\\members\\84bc323d-6ca8-48ae-92a2-2eba75ce9484team-3.jpg",
       "SourceId": "MambaManyToManyCrud",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\II novbe\\Desktop\\MambaApi\\MambaManyToManyCrud\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tenzıle SSD\\Desktop\\MambaApi\\MambaManyToManyCrud\\wwwroot\\",
       "BasePath": "_content/MambaManyToManyCrud",
       "RelativePath": "uploads/members/84bc323d-6ca8-48ae-92a2-2eba75ce9484team-3.jpg",
       "AssetKind": "All",
@@ -131,10 +131,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\members\\84bc323d-6ca8-48ae-92a2-2eba75ce9484team-3.jpg"
     },
     {
-      "Identity": "C:\\Users\\II novbe\\Desktop\\MambaApi\\MambaManyToManyCrud\\wwwroot\\uploads\\members\\9cabcd59-8c49-4370-b99c-cdd5b46fab21banner-9.jpg",
+      "Identity": "C:\\Users\\Tenzıle SSD\\Desktop\\MambaApi\\MambaManyToManyCrud\\wwwroot\\uploads\\members\\9cabcd59-8c49-4370-b99c-cdd5b46fab21banner-9.jpg",
       "SourceId": "MambaManyToManyCrud",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\II novbe\\Desktop\\MambaApi\\MambaManyToManyCrud\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tenzıle SSD\\Desktop\\MambaApi\\MambaManyToManyCrud\\wwwroot\\",
       "BasePath": "_content/MambaManyToManyCrud",
       "RelativePath": "uploads/members/9cabcd59-8c49-4370-b99c-cdd5b46fab21banner-9.jpg",
       "AssetKind": "All",
@@ -150,10 +150,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\members\\9cabcd59-8c49-4370-b99c-cdd5b46fab21banner-9.jpg"
     },
     {
-      "Identity": "C:\\Users\\II novbe\\Desktop\\MambaApi\\MambaManyToManyCrud\\wwwroot\\uploads\\members\\ae76963e-d016-4c12-a420-e59a56756599team-2.jpg",
+      "Identity": "C:\\Users\\Tenzıle SSD\\Desktop\\MambaApi\\MambaManyToManyCrud\\wwwroot\\uploads\\members\\ae76963e-d016-4c12-a420-e59a56756599team-2.jpg",
       "SourceId": "MambaManyToManyCrud",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\II novbe\\Desktop\\MambaApi\\MambaManyToManyCrud\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tenzıle SSD\\Desktop\\MambaApi\\MambaManyToManyCrud\\wwwroot\\",
       "BasePath": "_content/MambaManyToManyCrud",
       "RelativePath": "uploads/members/ae76963e-d016-4c12-a420-e59a56756599team-2.jpg",
       "AssetKind": "All",
@@ -169,10 +169,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\members\\ae76963e-d016-4c12-a420-e59a56756599team-2.jpg"
     },
     {
-      "Identity": "C:\\Users\\II novbe\\Desktop\\MambaApi\\MambaManyToManyCrud\\wwwroot\\uploads\\members\\be4a0c26-9099-4975-8478-173a086164fabanner-3.jpg",
+      "Identity": "C:\\Users\\Tenzıle SSD\\Desktop\\MambaApi\\MambaManyToManyCrud\\wwwroot\\uploads\\members\\be4a0c26-9099-4975-8478-173a086164fabanner-3.jpg",
       "SourceId": "MambaManyToManyCrud",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\II novbe\\Desktop\\MambaApi\\MambaManyToManyCrud\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tenzıle SSD\\Desktop\\MambaApi\\MambaManyToManyCrud\\wwwroot\\",
       "BasePath": "_content/MambaManyToManyCrud",
       "RelativePath": "uploads/members/be4a0c26-9099-4975-8478-173a086164fabanner-3.jpg",
       "AssetKind": "All",
@@ -186,6 +186,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\members\\be4a0c26-9099-4975-8478-173a086164fabanner-3.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Tenzıle SSD\\Desktop\\MambaApi\\MambaManyToManyCrud\\wwwroot\\uploads\\members\\f26c9eb5-71b7-4741-bb81-d71fdd7a73ebteam-2.jpg",
+      "SourceId": "MambaManyToManyCrud",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Tenzıle SSD\\Desktop\\MambaApi\\MambaManyToManyCrud\\wwwroot\\",
+      "BasePath": "_content/MambaManyToManyCrud",
+      "RelativePath": "uploads/members/f26c9eb5-71b7-4741-bb81-d71fdd7a73ebteam-2.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\members\\f26c9eb5-71b7-4741-bb81-d71fdd7a73ebteam-2.jpg"
     }
   ]
 }

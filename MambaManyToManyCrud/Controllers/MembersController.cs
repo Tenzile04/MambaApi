@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using Mamba.Business.Exceptions;
+using Mamba.Business.Services.Interfaces;
 using MambaManyToManyCrud.DAL;
 using MambaManyToManyCrud.DTOs.MemberDtos;
 using MambaManyToManyCrud.DTOs.ProfessionDtos;
@@ -14,203 +16,296 @@ namespace MambaManyToManyCrud.Controllers
     [ApiController]
     public class MembersController : ControllerBase
     {
-        private readonly IMapper _mapper;
-        private readonly AppDbContext _context;
-        private readonly IWebHostEnvironment _env;
-        public MembersController(AppDbContext context, IMapper mapper, IWebHostEnvironment env)
+        private readonly IMemberService _memberService;
+        public MembersController(IMemberService memberService)
         {
-            _context = context;
-            _mapper = mapper;
-            _env = env;
+            _memberService = memberService;
         }
-
-        [HttpGet]
-        public IActionResult GetAll(string? search,int? professionId,int? order )
+        [HttpGet("")]
+        public async Task<IActionResult> GetAll(string? search, int? profrssionId, int? orderId)
         {
-          var  member=_context.Members.AsQueryable();
-            //var member = _context.Members.ToList();
-            if (search != null)
-            {
-                member = member.Where(m => m.FullName.Contains(search.Trim().ToLower()));
-                
-            }
-            if(professionId != null)
-            {
-                member = member.Where(x => x.MemberProfessions.Any(x => x.ProfessionId == professionId && x.MemberId==x.Id));
-            }
-            if(order != null)
-            {
-                switch (order)
-                {
-                    case 1:
-                        member=member.OrderByDescending(x=>x.CreatedDate); break;
-                    case 2:
-                        member = member.OrderBy(x => x.FullName);break;
-                    default:
-                        return BadRequest("Order value is not correct!");
-                };
-            }
 
-            IEnumerable<MemberGetDto> memberGetDtos = new List<MemberGetDto>();
-            memberGetDtos = member.Select(x => new MemberGetDto
-            {
-                FullName = x.FullName
-                
-            });
+            List<MemberGetDto> memberGetDtos = await _memberService.GetAllAsync(search, profrssionId, orderId);
 
             return Ok(memberGetDtos);
         }
+
+
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> Get(int id)
         {
+
             if (id == null && id <= 0) return NotFound();
-
-            var member = _context.Members.FirstOrDefault(x => x.Id == id);
-            if (member == null) return NotFound();
-
-            MemberGetDto memberGetDto = _mapper.Map<MemberGetDto>(member);
-
+            MemberGetDto memberGetDto = await _memberService.GetByIdAsync(id);
+ 
             return Ok(memberGetDto);
         }
 
         [HttpPost("")]
-        [ProducesResponseType(StatusCodes.Status201Created)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public IActionResult Create([FromForm] MemberCreateDto memberCreateDto)
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        public async Task<IActionResult> Create([FromForm] MemberCreateDto memberCreateDto)
         {
-            var member = _mapper.Map<Member>(memberCreateDto);
-            member.CreatedDate = DateTime.UtcNow.AddHours(4);
-            member.UpdatedDate = DateTime.UtcNow.AddHours(4);
-            bool check = true;
-            if (memberCreateDto.ProfessionIds != null)
+            try
             {
-                foreach (var professionId in memberCreateDto.ProfessionIds)
-                {
-                    if (_context.Professions.Any(x => x.Id == professionId))
-                    {
-                        check = false;
-                        break;
-                    }
-                }
+                await _memberService.CreateAsync(memberCreateDto);
             }
-            if (!check)
+            catch (InvalidImageFileException ex)
             {
-                if (memberCreateDto.ProfessionIds != null)
-                {
-                    foreach (var professionId in memberCreateDto.ProfessionIds)
-                    {
-                        MemberProfession memberProfession = new MemberProfession()
-                        {
-                            Member = member,
-                            ProfessionId = professionId
-                        };
-                        _context.MembersProfessions.Add(memberProfession);
-                    }
-                }
+                return BadRequest(ex.Message);
             }
-            else
+            catch (InvalidNotFoundException ex)
             {
-                return NotFound();
-
+                return BadRequest(ex.Message);
             }
 
-
-            if (memberCreateDto.ImageFile != null)
-            {
-
-                if (memberCreateDto.ImageFile.ContentType != "image/jpeg" && memberCreateDto.ImageFile.ContentType != "image/png")
-                {
-                    return BadRequest(new { message = "ImageFile ContentType must be jpeg or png" });
-                }
-
-                if (memberCreateDto.ImageFile.Length > 2097152)
-                {
-                    return BadRequest(new { message = "ImageFile File size must be lower than 2mb" });
-                }
-
-                member.ImageUrl = Helper.SaveFile(_env.WebRootPath, "uploads/members", memberCreateDto.ImageFile);
-            }
-            else
-            {
-                return BadRequest(new { message = "ImageFile Required!" });
-
-            }
-            _context.Members.Add(member);
-            _context.SaveChanges();
             return StatusCode(201, new { message = "Member Created" });
         }
-
-        [HttpPut("{id}")]
-        [ProducesResponseType(StatusCodes.Status204NoContent)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [HttpPut("")]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public IActionResult Update([FromForm] MemberUpdateDto memberUpdateDto, int id)
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        public async Task<IActionResult> Update([FromForm] MemberUpdateDto memberUpdateDto)
         {
-
-            var member = _context.Members.Include(member => member.MemberProfessions).FirstOrDefault(x => x.Id == id);
-            if (member == null) return NotFound();
-
-            member.MemberProfessions.RemoveAll(x => !memberUpdateDto.ProfessionIds.Contains(x.ProfessionId));
-
-            foreach (var professionId in memberUpdateDto.ProfessionIds.Where(profId => !member.MemberProfessions.Any(mp => mp.ProfessionId == profId)))
+            try
             {
-                MemberProfession memberProfession = new MemberProfession()
-                {
-                    ProfessionId = professionId
-                };
-                member.MemberProfessions.Add(memberProfession);
+                await _memberService.UpdateAsync(memberUpdateDto);
+            }
+            catch (InvalidImageFileException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            catch (InvalidNotFoundException ex)
+            {
+                return BadRequest(ex.Message);
             }
 
-
-            if (memberUpdateDto.ImageFile != null)
-            {
-
-                if (memberUpdateDto.ImageFile.ContentType != "image/jpeg" && memberUpdateDto.ImageFile.ContentType != "image/png")
-                {
-                    return BadRequest(new { message = "ImageFile ContentType must be jpeg or png" });
-                }
-
-                if (memberUpdateDto.ImageFile.Length > 2097152)
-                {
-
-                    return BadRequest(new { message = "ImageFile File size must be lower than 2mb" });
-                }
-                string deletepath = Path.Combine(_env.WebRootPath, "uploads/members", member.ImageUrl);
-                if (System.IO.File.Exists(deletepath))
-                {
-                    System.IO.File.Delete(deletepath);
-                }
-
-                member.ImageUrl = Helper.SaveFile(_env.WebRootPath, "uploads/members", memberUpdateDto.ImageFile);
-            }
-            else
-            {
-                return BadRequest(new { message = "ImageFile Required!" });
-
-            }
-
-            member = _mapper.Map(memberUpdateDto, member);
-            member.UpdatedDate = DateTime.UtcNow.AddHours(4);
-            _context.SaveChanges();
             return NoContent();
         }
 
         [HttpDelete("{id}")]
-        [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public IActionResult Delete(int id)
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        public async Task<IActionResult> Delete(int id)
         {
-            var member = _context.Members.FirstOrDefault(x => x.Id == id);
-            if (member == null) return NotFound();
-            member.IsDeleted = !member.IsDeleted;
 
-            member.UpdatedDate = DateTime.UtcNow.AddHours(4);
+            if (id == null) return NotFound();
 
-            _context.SaveChanges();
-            return StatusCode(204);
+            try
+            {
+                await _memberService.Delete(id);
+            }
+            catch (InvalidNotFoundException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+            return NoContent();
         }
+
+
+
+
+
+        //    private readonly IMapper _mapper;
+        //    private readonly AppDbContext _context;
+        //    private readonly IWebHostEnvironment _env;
+        //    public MembersController(AppDbContext context, IMapper mapper, IWebHostEnvironment env)
+        //    {
+        //        _context = context;
+        //        _mapper = mapper;
+        //        _env = env;
+        //    }
+
+        //    [HttpGet]
+        //    public IActionResult GetAll(string? search,int? professionId,int? order )
+        //    {
+        //      var  member=_context.Members.AsQueryable();
+        //        //var member = _context.Members.ToList();
+        //        if (search != null)
+        //        {
+        //            member = member.Where(m => m.FullName.Contains(search.Trim().ToLower()));
+
+        //        }
+        //        if(professionId != null)
+        //        {
+        //            member = member.Where(x => x.MemberProfessions.Any(x => x.ProfessionId == professionId && x.MemberId==x.Id));
+        //        }
+        //        if(order != null)
+        //        {
+        //            switch (order)
+        //            {
+        //                case 1:
+        //                    member=member.OrderByDescending(x=>x.CreatedDate); break;
+        //                case 2:
+        //                    member = member.OrderBy(x => x.FullName);break;
+        //                default:
+        //                    return BadRequest("Order value is not correct!");
+        //            };
+        //        }
+
+        //        IEnumerable<MemberGetDto> memberGetDtos = new List<MemberGetDto>();
+        //        memberGetDtos = member.Select(x => new MemberGetDto
+        //        {
+        //            FullName = x.FullName
+
+        //        });
+
+        //        return Ok(memberGetDtos);
+        //    }
+        //    [HttpGet("{id}")]
+        //    [ProducesResponseType(StatusCodes.Status404NotFound)]
+        //    public async Task<IActionResult> Get(int id)
+        //    {
+        //        if (id == null && id <= 0) return NotFound();
+
+        //        var member = _context.Members.FirstOrDefault(x => x.Id == id);
+        //        if (member == null) return NotFound();
+
+        //        MemberGetDto memberGetDto = _mapper.Map<MemberGetDto>(member);
+
+        //        return Ok(memberGetDto);
+        //    }
+
+        //    [HttpPost("")]
+        //    [ProducesResponseType(StatusCodes.Status201Created)]
+        //    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        //    [ProducesResponseType(StatusCodes.Status404NotFound)]
+        //    public IActionResult Create([FromForm] MemberCreateDto memberCreateDto)
+        //    {
+        //        var member = _mapper.Map<Member>(memberCreateDto);
+        //        //member.CreatedDate = DateTime.UtcNow.AddHours(4);
+        //        //member.UpdatedDate = DateTime.UtcNow.AddHours(4);
+        //        bool check = true;
+        //        if (memberCreateDto.ProfessionIds != null)
+        //        {
+        //            foreach (var professionId in memberCreateDto.ProfessionIds)
+        //            {
+        //                if (_context.Professions.Any(x => x.Id == professionId))
+        //                {
+        //                    check = false;
+        //                    break;
+        //                }
+        //            }
+        //        }
+        //        if (!check)
+        //        {
+        //            if (memberCreateDto.ProfessionIds != null)
+        //            {
+        //                foreach (var professionId in memberCreateDto.ProfessionIds)
+        //                {
+        //                    MemberProfession memberProfession = new MemberProfession()
+        //                    {
+        //                        Member = member,
+        //                        ProfessionId = professionId
+        //                    };
+        //                    _context.MembersProfessions.Add(memberProfession);
+        //                }
+        //            }
+        //        }
+        //        else
+        //        {
+        //            return NotFound();
+
+        //        }
+
+
+        //        if (memberCreateDto.ImageFile != null)
+        //        {
+
+        //            if (memberCreateDto.ImageFile.ContentType != "image/jpeg" && memberCreateDto.ImageFile.ContentType != "image/png")
+        //            {
+        //                return BadRequest(new { message = "ImageFile ContentType must be jpeg or png" });
+        //            }
+
+        //            if (memberCreateDto.ImageFile.Length > 2097152)
+        //            {
+        //                return BadRequest(new { message = "ImageFile File size must be lower than 2mb" });
+        //            }
+
+        //            member.ImageUrl = Helper.SaveFile(_env.WebRootPath, "uploads/members", memberCreateDto.ImageFile);
+        //        }
+        //        else
+        //        {
+        //            return BadRequest(new { message = "ImageFile Required!" });
+
+        //        }
+        //        _context.Members.Add(member);
+        //        _context.SaveChanges();
+        //        return StatusCode(201, new { message = "Member Created" });
+        //    }
+
+        //    [HttpPut("{id}")]
+        //    [ProducesResponseType(StatusCodes.Status204NoContent)]
+        //    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        //    [ProducesResponseType(StatusCodes.Status404NotFound)]
+        //    public IActionResult Update([FromForm] MemberUpdateDto memberUpdateDto, int id)
+        //    {
+
+        //        var member = _context.Members.Include(member => member.MemberProfessions).FirstOrDefault(x => x.Id == id);
+        //        if (member == null) return NotFound();
+
+        //        member.MemberProfessions.RemoveAll(x => !memberUpdateDto.ProfessionIds.Contains(x.ProfessionId));
+
+        //        foreach (var professionId in memberUpdateDto.ProfessionIds.Where(profId => !member.MemberProfessions.Any(mp => mp.ProfessionId == profId)))
+        //        {
+        //            MemberProfession memberProfession = new MemberProfession()
+        //            {
+        //                ProfessionId = professionId
+        //            };
+        //            member.MemberProfessions.Add(memberProfession);
+        //        }
+
+
+        //        if (memberUpdateDto.ImageFile != null)
+        //        {
+
+        //            if (memberUpdateDto.ImageFile.ContentType != "image/jpeg" && memberUpdateDto.ImageFile.ContentType != "image/png")
+        //            {
+        //                return BadRequest(new { message = "ImageFile ContentType must be jpeg or png" });
+        //            }
+
+        //            if (memberUpdateDto.ImageFile.Length > 2097152)
+        //            {
+
+        //                return BadRequest(new { message = "ImageFile File size must be lower than 2mb" });
+        //            }
+        //            string deletepath = Path.Combine(_env.WebRootPath, "uploads/members", member.ImageUrl);
+        //            if (System.IO.File.Exists(deletepath))
+        //            {
+        //                System.IO.File.Delete(deletepath);
+        //            }
+
+        //            member.ImageUrl = Helper.SaveFile(_env.WebRootPath, "uploads/members", memberUpdateDto.ImageFile);
+        //        }
+        //        else
+        //        {
+        //            return BadRequest(new { message = "ImageFile Required!" });
+
+        //        }
+
+        //        member = _mapper.Map(memberUpdateDto, member);
+        //        //member.UpdatedDate = DateTime.UtcNow.AddHours(4);
+        //        _context.SaveChanges();
+        //        return NoContent();
+        //    }
+
+        //    [HttpDelete("{id}")]
+        //    [ProducesResponseType(StatusCodes.Status204NoContent)]
+        //    [ProducesResponseType(StatusCodes.Status404NotFound)]
+        //    public IActionResult Delete(int id)
+        //    {
+        //        var member = _context.Members.FirstOrDefault(x => x.Id == id);
+        //        if (member == null) return NotFound();
+        //        member.IsDeleted = !member.IsDeleted;
+
+        //        //member.UpdatedDate = DateTime.UtcNow.AddHours(4);
+
+        //        _context.SaveChanges();
+        //        return StatusCode(204);
+        //    }
     }
 
 }
