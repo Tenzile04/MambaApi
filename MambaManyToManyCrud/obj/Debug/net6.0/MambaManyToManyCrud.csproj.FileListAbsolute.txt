@@ -234,3 +234,8 @@ C:\Users\II novbe\Desktop\MambaApi\MambaManyToManyCrud\bin\Debug\net6.0\Mamba.Da
 C:\Users\II novbe\Desktop\MambaApi\MambaManyToManyCrud\bin\Debug\net6.0\Mamba.Business.pdb
 C:\Users\II novbe\Desktop\MambaApi\MambaManyToManyCrud\bin\Debug\net6.0\Mamba.Core.pdb
 C:\Users\II novbe\Desktop\MambaApi\MambaManyToManyCrud\bin\Debug\net6.0\Mamba.Data.pdb
+C:\Users\II novbe\Desktop\MambaApi\MambaManyToManyCrud\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\II novbe\Desktop\MambaApi\MambaManyToManyCrud\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\II novbe\Desktop\MambaApi\MambaManyToManyCrud\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\II novbe\Desktop\MambaApi\MambaManyToManyCrud\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\II novbe\Desktop\MambaApi\MambaManyToManyCrud\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll

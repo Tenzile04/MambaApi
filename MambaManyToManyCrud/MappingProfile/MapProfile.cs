@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using Mamba.Business.DTOs.AppUserDtos;
+using Mamba.Core.Entities;
 using MambaManyToManyCrud.DTOs.MemberDtos;
 using MambaManyToManyCrud.DTOs.ProfessionDtos;
 using MambaManyToManyCrud.Entities;
@@ -16,6 +18,8 @@ namespace MambaManyToManyCrud.MappingProfile
             CreateMap<MemberGetDto, Member>().ReverseMap();
             CreateMap<MemberCreateDto, Member>().ReverseMap();
             CreateMap<MemberUpdateDto, Member>().ReverseMap();
+
+            CreateMap<RegisterDto,AppUser>().ReverseMap();
         }
     }
 }
